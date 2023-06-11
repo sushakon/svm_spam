@@ -14,10 +14,13 @@ def email_features(word_indices: List[int]) -> np.ndarray:
     # Total number of words in the dictionary
     n_words = 1899
 
-    vec_words = np.zeros(n_words)
+    vec_words = np.ndarray((1, n_words), dtype='int');
+
+    for i in range(n_words):
+        vec_words[0, i] = 0;
 
     for i in word_indices:
-        vec_words[i] = 1;
+        vec_words[0, i - 1] = 1;
         
     return vec_words;
 

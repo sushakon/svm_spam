@@ -19,8 +19,6 @@ def process_email(email_contents: str) -> List[int]:
     word_indices = []
 
     # ========================== Preprocess Email ===========================
-
-    # Find the Headers ( \n\n and remove )
     # Uncomment the following lines if you are working with raw emails with the
     # full headers
 
@@ -31,8 +29,6 @@ def process_email(email_contents: str) -> List[int]:
     email_contents = email_contents.lower()
 
     # Strip all HTML
-    # Looks for any expression that starts with < and ends with > and replace
-    # and does not have any < or > in the tag it with a space
     email_contents = re.sub('<[^<>]+>', ' ', email_contents)
 
     # Convert all sequences of digits (0-9) to a 'number' token.
@@ -49,7 +45,6 @@ def process_email(email_contents: str) -> List[int]:
 
     # ========================== Tokenize Email ===========================
 
-    # Output the email to screen as well
     print('\n==== Processed Email ====\n\n')
 
     # Process file
